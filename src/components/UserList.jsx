@@ -48,16 +48,17 @@ function UserList() {
       <div className='userContainer-child-2'>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="User information">
-            <TableHead>
+            <TableHead style={{backgroundColor:'#dee2e6'}}>
               <TableRow>
-                <TableCell sx={{ minWidth: 50, maxWidth: 100 }} align="left" width='208'>Kullanıcı Adı</TableCell>
-                <TableCell sx={{ minWidth: 50, maxWidth: 100 }} align="left" width='208'>TC Kimlik No</TableCell>
-                <TableCell sx={{ minWidth: 50, maxWidth: 100 }} align="left" width='208'>Ad Soyad</TableCell>
-                <TableCell sx={{ minWidth: 50, maxWidth: 100 }} align="left" width='208'>Doğum Tarihi</TableCell>
-                <TableCell sx={{ minWidth: 50, maxWidth: 100 }} align="left" width='208'>Telefon No</TableCell>
+                <TableCell sx={{ minWidth: 50, maxWidth: 50 }} align="left" width='208'>Kullanıcı Adı</TableCell>
+                <TableCell sx={{ minWidth: 50, maxWidth: 50 }} align="left" width='208'>TC Kimlik No</TableCell>
+                <TableCell sx={{ minWidth: 50, maxWidth: 50 }} align="left" width='208'>Ad Soyad</TableCell>
+                <TableCell sx={{ minWidth: 50, maxWidth: 50 }} align="left" width='208'>Doğum Tarihi</TableCell>
+                <TableCell sx={{ minWidth: 50, maxWidth: 70 }} align="left" width='208'>Telefon No</TableCell>
                 <TableCell sx={{ minWidth: 50, maxWidth: 100 }} align="left" width='208'>Email</TableCell>
-                <TableCell sx={{ minWidth: 10, maxWidth: 50 }} align="left" width='100'>Güncelle</TableCell>
-                <TableCell sx={{ minWidth: 10, maxWidth: 50 }} align="left" width='100'>Sil</TableCell>
+                <TableCell sx={{ minWidth: 50, maxWidth: 50 }} align="left" width='208'>Kayıt Zamanı</TableCell>
+                <TableCell sx={{ minWidth: 10, maxWidth: 20 }} align="left" width='100'>Güncelle</TableCell>
+                <TableCell sx={{ minWidth: 10, maxWidth: 20 }} align="left" width='100'>Sil</TableCell>
               </TableRow>
             </TableHead>
           </Table>

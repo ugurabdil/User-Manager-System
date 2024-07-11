@@ -1,19 +1,19 @@
 /* #dee2e6 */
-
 .headerContainer{
-    width: 100;
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
     justify-content: center;
     align-items: center;
-    height: 20vh;
+   max-height: 50vh;
     background-color: #343a40;
+    
 }
 .header-child-1{
     width: 350px;
-    height: 80px;
+    max-height: 25vh;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -25,14 +25,15 @@
 .header-child-2{
     font-size: 20px;
     width: 100%;
-   margin-bottom:-50px ;
-    height: 10vh;
+    margin-bottom: -25px;
+    max-height: 8vh;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: left;
     background-color: #dee2e6;
 }
+
 .link{
     color:#343a40 ;
     font-weight: bold;
@@ -40,4 +41,22 @@
     font-size: 25px;
     display: flex;
     cursor: pointer;
+    margin-left: 10px;
+    align-items: center;
 }
+
+.link-icon{
+    color:#343a40 ;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 25px;
+    display: flex;
+    cursor: pointer;
+    margin-left: 10px;
+    align-items: center;
+}
+.link-icon:hover{
+    font-size: 30px;
+}
+
+
