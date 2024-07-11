@@ -8,8 +8,8 @@ import { PiUserListBold } from "react-icons/pi";
 
 function Header() {
 
-  const [open, setOpen]=useState(true)
-  const [newOpen, setNewOpen]=useState(false)
+  const [open, setOpen]=useState(false)
+  const [newOpen, setNewOpen]=useState(true)
 
   const linkNameOpen=()=>{
     setOpen(true)
@@ -20,10 +20,7 @@ function Header() {
     setNewOpen(true)
     setOpen(false)
   }
-  // const closeAll=()=>{
-  //   setOpen(true)
-  //   setNewOpen(false)
-  // }
+ 
   return (
     <div className='headerContainer'>
       <div className='header-child-1'>
