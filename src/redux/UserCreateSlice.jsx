@@ -40,10 +40,15 @@ export const userSlice = createSlice({
         user.phone.includes(action.payload) ||
         user.mail.includes(action.payload)
       );
+    },
+    updatedUser:(state,action)=>{
+      state.users=[...state.users.map((user) => user.id!==action.payload.id? user :action.payload)]
+     writeCreateUserStorage(state.users);
+    }
     }
   }
-})
+)
 
-export const { createUser, removeUser, allUsersRemove, searchUsers } = userSlice.actions;
+export const { createUser, removeUser, allUsersRemove, searchUsers,updatedUser } = userSlice.actions;
 
 export default userSlice.reducer;
