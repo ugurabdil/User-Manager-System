@@ -1,22 +1,36 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const getCreateUserStorage = () => {
+  if (localStorage.getItem("createUserStorage")) {
+    return JSON.parse(localStorage.getItem("createUserStorage"));
+  }
+  return [];
+}
+
 const initialState = {
-    users:[],
-    removeUsers:[],
-  
+  users: getCreateUserStorage(),
+  searchResults: []
+}
+
+const writeCreateUserStorage = (users) => {
+  localStorage.setItem("createUserStorage", JSON.stringify(users));
 }
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    createUser:(state,action)=>{
-        state.users= [...state.users, action.payload]
+    createUser: (state, action) => {
+      state.users = [...state.users, action.payload];
+      writeCreateUserStorage(state.users);
     },
-    removeUser:(state,action)=>{
-      state.users=[...state.users.filter((user)=>user.id!==action.payload)]
+    removeUser: (state, action) => {
+      state.users = state.users.filter(user => user.id !== action.payload);
+      writeCreateUserStorage(state.users);
     },
-    allUsersRemove:(state)=>{state.users=[];
+    allUsersRemove: (state) => {
+      state.users = [];
+      writeCreateUserStorage(state.users);
     },
     searchUsers: (state, action) => {
       state.searchResults = state.users.filter(user =>
@@ -26,12 +40,10 @@ export const userSlice = createSlice({
         user.phone.includes(action.payload) ||
         user.mail.includes(action.payload)
       );
-
     }
-  },
+  }
 })
 
+export const { createUser, removeUser, allUsersRemove, searchUsers } = userSlice.actions;
 
-export const {createUser,removeUser,allUsersRemove,searchUsers} = userSlice.actions
-
-export default userSlice.reducer
+export default userSlice.reducer;
